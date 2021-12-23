@@ -12,9 +12,7 @@ COPY requirements.txt /var/www/app/requirements.txt
 RUN apk --update --no-cache add python3-dev && ln -sf python3 /usr/bin/python
 RUN python3 -m ensurepip
 RUN pip3 install --no-cache --upgrade pip setuptools
-RUN pip3 install flask
-RUN pip3 install flask_expects_json
-RUN pip3 install elasticsearch
+RUN pip3 install -r /var/www/app/requirements.txt
 
 # Handle Apache2 Configuration, Remove Excess Files
 # =============================================================================
