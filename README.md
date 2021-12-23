@@ -1,4 +1,4 @@
-# Cars API with ElasticSearch
+# Cars API with ElasticSearch and RabbitMQ
 
 Make Sure Docker is Installed on Your Machine
 
