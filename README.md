@@ -31,3 +31,5 @@ To Update Car by Id - Make PUT Request to '/{id}' with Valid JSON Schema contain
 }
 
 To Delete Car By Id - Make DELETE Request to '/{id}'
+
+RabbitMQ Logs Can Be Seen in Terminal
