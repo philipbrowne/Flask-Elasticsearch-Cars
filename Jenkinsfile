@@ -16,11 +16,18 @@ pipeline {
         booleanParam(name: 'executeTest', defaultValue: true, description: '')
     }
     stages {
+        stage("init"){
+            steps{
+                script{
+                    gv = load "script.groovy"
+                }
+            }
+        }
         stage("build"){
             steps{
-                echo "Code Changes Detected..."
-                // Needs to be in double quotes to use variable in string
-                echo "Building the Application ${NEW_VERSION}"
+                script{
+                    gv.buildApp()
+                }
             }
         }
         stage("test"){
@@ -32,14 +39,16 @@ pipeline {
                 }
             }
             steps{
-                echo "Testing the Application..."
+                script{
+                    gv.testApp()
+                }
             }
         }
         stage("deploy"){
             steps{
-                echo "Deploying the Application"
-                echo "Deploying As ${env.SERVER_CREDENTIALS}"
-                echo "Deploying version ${params.VERSION}"
+                script{
+                    gv.deployApp()
+                }
             }   
         }
     }
