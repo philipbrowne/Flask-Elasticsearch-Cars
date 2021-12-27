@@ -17,13 +17,15 @@ pipeline {
     }
     stages {
         stage("build"){
-            steps{
-                when {
+            when {
                 // if current branch is dev
                 expression{
                     BRANCH_NAME == 'dev' || BRANCH_NAME == 'main' && CODE_CHANGES
                 }
             }
+            steps{
+                
+            
                 echo "Code Changes Detected..."
                 // Needs to be in double quotes to use variable in string
                 echo "Building the Application ${NEW_VERSION}"
