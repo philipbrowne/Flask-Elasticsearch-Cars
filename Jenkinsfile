@@ -17,12 +17,6 @@ pipeline {
     }
     stages {
         stage("build"){
-            when {
-                // if current branch is dev
-                expression{
-                    env.BRANCH_NAME == 'main'
-                }
-            }
             steps{
                 echo "Code Changes Detected..."
                 // Needs to be in double quotes to use variable in string
