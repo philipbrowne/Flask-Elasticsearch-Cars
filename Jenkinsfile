@@ -20,12 +20,10 @@ pipeline {
             when {
                 // if current branch is dev
                 expression{
-                    env.BRANCH_NAME == 'dev' || env.BRANCH_NAME == 'main' && CODE_CHANGES
+                    env.BRANCH_NAME == 'main'
                 }
             }
             steps{
-                
-            
                 echo "Code Changes Detected..."
                 // Needs to be in double quotes to use variable in string
                 echo "Building the Application ${NEW_VERSION}"
@@ -36,7 +34,7 @@ pipeline {
                 // if current branch is dev
                 expression{
                     // BRANCH_NAME == 'dev' || BRANCH_NAME == 'main'
-                    params.executeTests
+                    params.executeTest
                 }
             }
             steps{
