@@ -46,9 +46,7 @@ pipeline {
         stage("deploy"){
             steps{
                 echo "Deploying the Application"
-                withCredentials([usernamePassword(credentials: 'server-admin', usernameVariable: USER, passwordVariable: PWD)])
-                echo "Deploying As ${SERVER_CREDENTIALS}"
-                echo "SOME SCRIPT WITH ${env.USER} and ${env.PWD}"
+                echo "Deploying As ${env.SERVER_CREDENTIALS}"
                 echo "Deploying version ${params.VERSION}"
             }   
         }
