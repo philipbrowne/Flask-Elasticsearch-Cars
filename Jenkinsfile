@@ -7,9 +7,9 @@ pipeline {
         SERVER_CREDENTIALS = credentials('server-admin')
     }
     // Build Tools for your Project
-    tools{
+    // tools{
 
-    }
+    // }
     parameters{
         string(name: 'VERSION', defaultValue: '', description: 'Version to deploy on prod')
         choice(name: 'VERSION', choices: ['1.1.0', '1.2.0', '1.3.0'], description: '')
