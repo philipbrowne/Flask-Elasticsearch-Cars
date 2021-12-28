@@ -35,4 +35,3 @@ cars = [
 ]
 
 
-print(json.dumps(cars))

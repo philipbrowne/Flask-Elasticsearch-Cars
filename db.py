@@ -61,4 +61,3 @@ def update_car(id, data):
 def delete_car(id):
     es.delete(index='cars', id=id)
     return {'ID': id, 'Status': 'Deleted'}
-
