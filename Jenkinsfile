@@ -5,8 +5,6 @@ pipeline {
          steps{
             sh "docker-compose up -d"
             echo "Docker Containers Running"
-            echo "Seeding Postgres Database"
-            sh 'docker exec -i carspipeline_web_1 /bin/sh -c "cd /var/www/app && python3 seed.py"'
             }
       }
       stage ('Run Tests') {
