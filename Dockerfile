@@ -3,7 +3,7 @@ RUN mkdir /logs
 
 # Install System Dependencies
 # =============================================================================
-RUN apk --update --no-cache add chromium-chromedriver apache2-mod-wsgi libffi-dev \
+RUN apk --update --no-cache add apache2-mod-wsgi libffi-dev \
 	wget ca-certificates make gcc musl-dev
 COPY requirements.txt /var/www/app/requirements.txt
 
