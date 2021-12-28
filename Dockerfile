@@ -14,7 +14,6 @@ RUN python3 -m ensurepip
 RUN pip3 install --no-cache --upgrade pip setuptools
 RUN pip3 install -r /var/www/app/requirements.txt
 RUN pip3 install pika
-RUN pip3 install flask_unittest
 
 # Handle Apache2 Configuration, Remove Excess Files
 # =============================================================================
